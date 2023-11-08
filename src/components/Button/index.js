@@ -16,12 +16,14 @@ function Button({
     rounded = false,
     href,
     leftIcon,
+    className,
     rightIcon,
     children,
     ...passProps
 }) {
     let Component = 'button';
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         outline,
         small,

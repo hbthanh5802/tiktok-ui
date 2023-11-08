@@ -1,0 +1,25 @@
+.menu-list {
+    min-width: 224px;
+
+    .menu-item {
+        font-family: inherit;
+        margin-left: 0;
+        font-weight: 600;
+    }
+}
+
+.menu-container {
+    padding-bottom: 8px;
+}
+
+// Menu item
+.menu-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 0;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}

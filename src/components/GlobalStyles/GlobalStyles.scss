@@ -4,10 +4,13 @@
 :root {
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
-    --text-color: #333;
     --search-border-radius: 92px;
     --search-height: 46px;
     --search-btn-width: 52px;
+
+    --primary-color: rgb(254, 44, 85);
+    --white-color: #fff;
+    --text-color: #333;
 }
 
 * {

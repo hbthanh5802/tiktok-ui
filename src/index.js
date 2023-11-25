@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from '~/components/GlobalStyles';
+import { IconContext } from 'react-icons';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <GlobalStyles>
-            <App />
-        </GlobalStyles>
+        <IconContext.Provider value={{ className: 'react-icons' }}>
+            <GlobalStyles>
+                <App />
+            </GlobalStyles>
+        </IconContext.Provider>
     </React.StrictMode>,
 );
 

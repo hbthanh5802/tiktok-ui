@@ -43,3 +43,18 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
+
+// Custom Tippy toltip
+body .tippy-box {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(84, 84, 84, 0.92);
+}
+
+body .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+
+    &::before {
+        border-bottom-color: rgba(84, 84, 84, 0.92);
+    }
+}

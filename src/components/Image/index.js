@@ -10,6 +10,7 @@ function Image({ src, alt, className, fallBack: customFallBack = images.noImage,
     const handleError = () => {
         setFallBack(customFallBack);
     };
+
     const classes = cx('wrapper', {
         [className]: className,
     });

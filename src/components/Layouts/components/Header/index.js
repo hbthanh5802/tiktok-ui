@@ -3,9 +3,6 @@ import classNames from 'classnames/bind';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
     faEllipsisVertical,
     faEarthAsia,
     faKeyboard,
@@ -18,17 +15,15 @@ import { BsCloudArrowUp } from 'react-icons/bs';
 import { GoGear } from 'react-icons/go';
 // Tippy
 import Tippy from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/shift-away.css';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
+import Search from '~/components/Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -62,7 +57,6 @@ const MENU_ITEMS = [
     },
 ];
 function Header() {
-    // const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
 
     // Handle logic
@@ -118,34 +112,8 @@ function Header() {
                     <img src={images.logo} alt="Logo Tiktok" />
                 </div>
 
-                <HeadlessTippy
-                    interactive
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input type="text" placeholder="Search account and videos..." spellCheck={false} />
+                <Search />
 
-                        <button className={cx('clear-btn')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-
-                        <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />
-
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
@@ -174,7 +142,12 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleOnChangeMenu}>
                         {currentUser ? (
-                            <Image className={cx('avatar')} src={images.avatar} alt="Avatar" />
+                            <Image
+                                className={cx('avatar')}
+                                src={images.avatar}
+                                alt="Avatar"
+                                fallBack="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg"
+                            />
                         ) : (
                             <>
                                 <button className={cx('menu-btn')}>

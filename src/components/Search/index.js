@@ -11,6 +11,7 @@ import 'tippy.js/animations/shift-away.css';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
+import { useDebounce } from '~/components/Hooks';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +21,7 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
     const searchInput = useRef();
+    const debouncedSearchValue = useDebounce(searchValue, 700);
 
     const handleClearSearch = () => {
         setSearchValue('');
@@ -54,7 +56,8 @@ function Search() {
             .catch((err) => {
                 setLoading(false);
             });
-    }, [searchValue]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debouncedSearchValue]);
 
     return (
         <HeadlessTippy

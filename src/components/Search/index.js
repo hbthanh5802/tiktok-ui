@@ -8,6 +8,8 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/shift-away.css';
 
+// personal
+import * as searchServices from '~/apiServices/searchServices';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
@@ -47,15 +49,14 @@ function Search() {
             return;
         }
         setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setLoading(false);
-            });
+
+        // call api
+        const fethAPI = async () => {
+            const result = await searchServices.search(searchValue);
+            setSearchResult(result);
+            setLoading(false);
+        };
+        fethAPI();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debouncedSearchValue]);
 

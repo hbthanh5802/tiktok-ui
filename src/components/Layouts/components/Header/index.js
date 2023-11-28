@@ -1,18 +1,14 @@
 // import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faEllipsisVertical,
-    faEarthAsia,
-    faKeyboard,
-    faCoins,
-    faChartLine,
-    faArrowRightToBracket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faKeyboard, faChartLine, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faCircleQuestion, faPaperPlane, faUser, faMessage } from '@fortawesome/free-regular-svg-icons';
-import { BsCloudArrowUp } from 'react-icons/bs';
+import { MdOutlineCloudUpload } from 'react-icons/md';
 import { GoGear } from 'react-icons/go';
+import { TbCoins } from 'react-icons/tb';
+import { IoEarthOutline } from 'react-icons/io5';
 // Tippy
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -24,11 +20,12 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '~/components/Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <IoEarthOutline />,
         title: 'English',
         children: {
             title: 'Language',
@@ -82,7 +79,7 @@ function Header() {
             to: '/@hbthanh5802',
         },
         {
-            icon: <FontAwesomeIcon icon={faCoins} />,
+            icon: <TbCoins />,
             title: 'Get coins',
             to: '/coins',
         },
@@ -109,7 +106,9 @@ function Header() {
         <h2 className={cx('wrapper')}>
             <div className={cx('container')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="Logo Tiktok" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="Logo Tiktok" />
+                    </Link>
                 </div>
 
                 <Search />
@@ -119,7 +118,7 @@ function Header() {
                         <>
                             <Tippy content="Upload video" placement="bottom" animation="shift-away">
                                 <button className={cx('action-btn')}>
-                                    <BsCloudArrowUp />
+                                    <MdOutlineCloudUpload />
                                 </button>
                             </Tippy>
                             <Tippy content="Message" placement="bottom" animation="shift-away">

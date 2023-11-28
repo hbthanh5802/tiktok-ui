@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const emtyFunction = () => {};
-function Menu({ children, items = [], onChange = emtyFunction }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = emtyFunction }) {
     const [menuHistory, setMenuHistory] = useState([{ data: items }]);
     const currentMenu = menuHistory[menuHistory.length - 1];
 
@@ -37,6 +37,7 @@ function Menu({ children, items = [], onChange = emtyFunction }) {
         <Tippy
             delay={[0, 700]}
             interactive
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>

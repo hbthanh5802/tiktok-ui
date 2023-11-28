@@ -48,7 +48,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = emtyFuncti
                                 onBack={() => setMenuHistory((prev) => prev.slice(0, menuHistory.length - 1))}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PoperWrapper>
                 </div>
             )}

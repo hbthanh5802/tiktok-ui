@@ -5,10 +5,10 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faKeyboard, faChartLine, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faCircleQuestion, faPaperPlane, faUser, faMessage } from '@fortawesome/free-regular-svg-icons';
-import { MdOutlineCloudUpload } from 'react-icons/md';
 import { GoGear } from 'react-icons/go';
 import { TbCoins } from 'react-icons/tb';
 import { IoEarthOutline } from 'react-icons/io5';
+import * as Icons from '~/components/Icons';
 // Tippy
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -118,7 +118,7 @@ function Header() {
                         <>
                             <Tippy content="Upload video" placement="bottom" animation="shift-away">
                                 <button className={cx('action-btn')}>
-                                    <MdOutlineCloudUpload />
+                                    <Icons.UploadIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Message" placement="bottom" animation="shift-away">

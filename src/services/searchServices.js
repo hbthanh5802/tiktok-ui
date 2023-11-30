@@ -1,4 +1,4 @@
-import * as request from '~/utils/request';
+import * as request from '~/utils/httpRequest';
 
 // Đây là nơi để làm việc với api.
 export const search = async (q, type = 'less') => {

@@ -44,7 +44,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = emtyFuncti
                     <PoperWrapper className={cx('menu-container')}>
                         {menuHistory.length > 1 && (
                             <Header
-                                title="Languages"
+                                title={currentMenu.title}
                                 onBack={() => setMenuHistory((prev) => prev.slice(0, menuHistory.length - 1))}
                             />
                         )}

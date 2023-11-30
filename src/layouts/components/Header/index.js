@@ -20,7 +20,7 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '~/components/Search';
-import routesConfig from '~/config/routes';
+import configs from '~/configs';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -71,7 +71,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/@hbthanh5802',
+            to: '/profile/@hbthanh5802',
         },
         {
             icon: <FontAwesomeIcon icon={faBookmark} />,
@@ -106,7 +106,7 @@ function Header() {
         <h2 className={cx('wrapper')}>
             <div className={cx('container')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Link to={configs.routes.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="Logo Tiktok" />
                     </Link>
                 </div>

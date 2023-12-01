@@ -34,26 +34,30 @@ function Menu({ children, items = [], hideOnClick = false, onChange = emtyFuncti
         });
     };
 
+    const handleRenderResult = (attrs) => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+            <PoperWrapper className={cx('menu-container')}>
+                {menuHistory.length > 1 && (
+                    <Header
+                        title={currentMenu.title}
+                        onBack={() => setMenuHistory((prev) => prev.slice(0, menuHistory.length - 1))}
+                    />
+                )}
+                <div className={cx('menu-body')}>{renderItems()}</div>
+            </PoperWrapper>
+        </div>
+    );
+
+    const handleBackMenu = () => setMenuHistory((prev) => prev.slice(0, 1));
+
     return (
         <Tippy
             delay={[0, 700]}
             interactive
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PoperWrapper className={cx('menu-container')}>
-                        {menuHistory.length > 1 && (
-                            <Header
-                                title={currentMenu.title}
-                                onBack={() => setMenuHistory((prev) => prev.slice(0, menuHistory.length - 1))}
-                            />
-                        )}
-                        <div className={cx('menu-body')}>{renderItems()}</div>
-                    </PoperWrapper>
-                </div>
-            )}
-            onHide={() => setMenuHistory((prev) => prev.slice(0, 1))}
+            render={handleRenderResult}
+            onHide={handleBackMenu}
         >
             {children}
         </Tippy>

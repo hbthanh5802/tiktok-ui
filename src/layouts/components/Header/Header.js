@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 // icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faKeyboard, faChartLine, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark, faCircleQuestion, faPaperPlane, faUser, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faBookmark, faCircleQuestion, faUser } from '@fortawesome/free-regular-svg-icons';
 import { GoGear } from 'react-icons/go';
 import { TbCoins } from 'react-icons/tb';
 import { IoEarthOutline } from 'react-icons/io5';
@@ -123,12 +123,14 @@ function Header() {
                             </Tippy>
                             <Tippy content="Message" placement="bottom" animation="shift-away">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <Icons.MessageIcon />
+                                    {/* <FontAwesomeIcon icon={faPaperPlane} /> */}
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom" animation="shift-away">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <Icons.InboxIcon />
+                                    {/* <FontAwesomeIcon icon={faMessage} /> */}
                                     <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
@@ -136,7 +138,9 @@ function Header() {
                     ) : (
                         <>
                             <Button textOnly>Upload</Button>
-                            <Button primary>Login</Button>
+                            <Button primary to={'/'}>
+                                Login
+                            </Button>
                         </>
                     )}
 

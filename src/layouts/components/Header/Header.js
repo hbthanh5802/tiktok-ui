@@ -19,7 +19,7 @@ import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
-import Search from '~/components/Search';
+import Search from '~/layouts/components/Search';
 import configs from '~/configs';
 
 const cx = classNames.bind(styles);

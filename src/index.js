@@ -7,13 +7,13 @@ import { IconContext } from 'react-icons';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <IconContext.Provider value={{ className: 'react-icons' }}>
-            <GlobalStyles>
-                <App />
-            </GlobalStyles>
-        </IconContext.Provider>
-    </React.StrictMode>,
+    // <React.StrictMode>
+    <IconContext.Provider value={{ className: 'react-icons' }}>
+        <GlobalStyles>
+            <App />
+        </GlobalStyles>
+    </IconContext.Provider>,
+    // </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

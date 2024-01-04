@@ -1,21 +1,21 @@
 .menu-item {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background 200ms ease-in-out 0s;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 200ms ease-in-out 0s;
 
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
-    }
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
 
-    &.active {
-        color: var(--primary-color);
-    }
+  &.active {
+    color: var(--primary-color);
+  }
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-left: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 8px;
 }

@@ -1,6 +1,7 @@
 .wrapper {
   padding: 16px 0;
   position: relative;
+  visibility: visible;
 
   &::before {
     content: '';
@@ -25,6 +26,7 @@
   display: flex;
   align-items: center;
   padding: 8px;
+  border-radius: 4px;
   transition: background-color 200ms ease-in-out 0s;
   cursor: pointer;
 
@@ -34,9 +36,10 @@
 
   .avatar {
     width: 32px;
-    height: auto;
+    height: 32px;
     border-radius: 9999px;
     margin-right: 12px;
+    aspect-ratio: 1 / 1;
   }
 
   .info {

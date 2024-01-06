@@ -3,119 +3,122 @@
 
 // Font embedded
 @font-face {
-    font-family: TikTokFont;
-    src: url('../../assets/fonts/TikTokFont-Regular.woff2') format('woff2');
-    font-weight: 400;
+  font-family: TikTokFont;
+  src: url('../../assets/fonts/TikTokFont-Regular.woff2') format('woff2');
+  font-weight: 400;
 }
 @font-face {
-    font-family: TikTokFont;
-    src: url('../../assets/fonts/TikTokFont-Semibold.woff2') format('woff2');
-    font-weight: 600;
+  font-family: TikTokFont;
+  src: url('../../assets/fonts/TikTokFont-Semibold.woff2') format('woff2');
+  font-weight: 600;
 }
 @font-face {
-    font-family: TikTokFont;
-    src: url('../../assets/fonts/TikTokFont-Bold.woff2') format('woff2');
-    font-weight: 700;
+  font-family: TikTokFont;
+  src: url('../../assets/fonts/TikTokFont-Bold.woff2') format('woff2');
+  font-weight: 700;
 }
 @font-face {
-    font-family: TikTokDisplayFont;
-    src: url('../../assets/fonts/TikTokDisplayFont-Bold.woff2') format('woff2');
-    font-weight: 700;
+  font-family: TikTokDisplayFont;
+  src: url('../../assets/fonts/TikTokDisplayFont-Bold.woff2') format('woff2');
+  font-weight: 700;
 }
 
 :root {
-    --default-layout-header-height: 60px;
-    --default-layout-width: 1150px;
-    --default-layout-horizontal-spacer: 24px;
-    --search-border-radius: 92px;
-    --search-height: 46px;
-    --search-btn-width: 52px;
+  --default-layout-header-height: 60px;
+  // --default-layout-width: 1150px;
+  --default-layout-width: 100%;
+  --default-layout-horizontal-spacer: 24px;
+  --default-layout-sidebar-width: 240px;
+  --search-border-radius: 92px;
+  --search-height: 46px;
+  --search-btn-width: 52px;
 
-    --primary-color: rgb(254, 44, 85);
-    --white-color: #fff;
-    --text-color: #333;
+  --primary-color: rgb(254, 44, 85);
+  --white-color: #fff;
+  --text-color: #333;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: 'TikTokFont', 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
-    color: var(--text-color);
+  font-family: 'TikTokFont', 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
 button,
 input,
 [tabindex] {
-    font-family: inherit;
-    outline: none;
-    border: none;
+  font-family: inherit;
+  outline: none;
+  border: none;
 }
 
 a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 // Custom Tippy toltip
 body .tippy-box {
-    padding: 8px;
-    border-radius: 8px;
-    background-color: rgba(84, 84, 84, 0.92);
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(84, 84, 84, 0.92);
 }
 
 body .tippy-arrow {
-    color: rgba(84, 84, 84, 0.92);
+  color: rgba(84, 84, 84, 0.92);
 
-    &::before {
-        border-bottom-color: rgba(84, 84, 84, 0.92);
-    }
+  &::before {
+    border-bottom-color: rgba(84, 84, 84, 0.92);
+  }
 }
 
 // React icons
 .react-icons {
-    vertical-align: middle;
-    height: 32px;
-    width: 32px;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
 }
 
 // Scrollbar
 html ::-webkit-scrollbar {
-    border-radius: 0px;
-    width: 8px;
+  border-radius: 0px;
+  width: 8px;
 }
 
 html *::-webkit-scrollbar {
-    border-radius: 0;
-    width: 8px;
+  border-radius: 0;
+  width: 8px;
 }
 
 html ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 4px;
+  background-color: rgba(22, 24, 35, 0.06);
 }
 
 html *::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 4px;
+  background-color: rgba(22, 24, 35, 0.06);
 }
 
 html ::-webkit-scrollbar-track {
-    border-radius: 0px;
-    background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 html *::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }

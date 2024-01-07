@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountPreview from './AccountPreview';
 import styles from './SuggestedAccount.module.scss';
-import images from '~/assets/images';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ function AccountItem({ data }) {
       render={renderPreview}
     >
       <Link to={`/profile/${data.nickname}`} className={cx('account-item')}>
-        <img className={cx('avatar')} src={data.avatar || images.avatar} alt="avatar" />
+        <Image className={cx('avatar')} src={data.avatar} alt="avatar" />
         <div className={cx('info')}>
           <p className={cx('name')}>
             <strong>{data.first_name + ' ' + data.last_name}</strong>

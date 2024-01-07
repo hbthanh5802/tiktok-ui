@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faMagic, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
 import * as Icons from '~/components/Icons';
@@ -118,7 +118,12 @@ function Video({ data }) {
                 <span className={cx('desc-tag')}>#2024</span>
                 <span className={cx('desc-tag')}>#tiktok</span>
               </div>
-              <div className={cx('music')}>{data.music}</div>
+              <div className={cx('music')}>
+                <span className={cx('music-icon')}>
+                  <FontAwesomeIcon icon={faMusic} />
+                </span>
+                <span>{data.music}</span>
+              </div>
             </div>
             <div className={cx('button')} onClick={() => setIsFollowed(!isFollowed)}>
               <Button outline={!isFollowed} primary={isFollowed}>

@@ -33,7 +33,6 @@ function Home() {
       try {
         let { type, except, page } = params;
         except = videosList.reduce((total, cur) => total + ',' + cur.uuid, '-1');
-        console.log(except);
         const videosresult = await videoServices.getVideosList(type, page, except);
         const paginationResult = await videoServices.getVideoPagination(type, page, except);
         setVideosList((prev) => [...prev, ...videosresult]);

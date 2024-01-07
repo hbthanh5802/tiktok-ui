@@ -25,6 +25,7 @@
   width: 56px;
   height: 56px;
   flex: 0 0 auto;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -84,9 +85,14 @@
   .music {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     .music-icon {
       margin-right: 4px;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 

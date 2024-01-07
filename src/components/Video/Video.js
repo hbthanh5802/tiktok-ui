@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faMagic, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
 import * as Icons from '~/components/Icons';
@@ -134,7 +134,13 @@ function Video({ data }) {
           <div className={cx('video-wrapper')}>
             <div className={cx('video')}>
               {!isInViewport && <img src={data.thumb_url} alt="thumbnail" />}
-              <video ref={videoRef} src={data.file_url} loop onClick={() => setIsPlaying(!isPlaying)}></video>
+              <video
+                ref={videoRef}
+                src={data.file_url}
+                loop
+                onClick={() => setIsPlaying(!isPlaying)}
+                autoPlay={true}
+              ></video>
               <div className={cx('video-control')}>
                 <div className={cx('video-btn')}>
                   <div className={cx('btn', 'play-btn')} onClick={() => setIsPlaying(!isPlaying)}>

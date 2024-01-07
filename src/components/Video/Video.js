@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faMagic, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faMusic } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
 import * as Icons from '~/components/Icons';

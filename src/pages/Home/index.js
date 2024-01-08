@@ -56,10 +56,12 @@ function Home() {
       // Kiểm tra xem bạn đã cuộn đến cuối trang chưa
       if (windowHeight + scrollY >= documentHeight) {
         // Bạn đã cuộn đến cuối trang
-        setParams({
-          ...params,
-          page: current_page < total_pages ? current_page + 1 : total_pages,
-        });
+        if (current_page < total_pages) {
+          setParams({
+            ...params,
+            page: current_page < total_pages ? current_page + 1 : total_pages,
+          });
+        }
       }
     };
 

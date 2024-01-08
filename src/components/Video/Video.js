@@ -34,7 +34,8 @@ function Video({ data }) {
   };
 
   useEffect(() => {
-    isPlaying ? videoRef.current.play() : videoRef.current.pause();
+    const video = videoRef.current;
+    isPlaying ? video.play() : video.pause();
   }, [isPlaying]);
 
   const handleChangeTimeBar = function (e) {
@@ -56,17 +57,18 @@ function Video({ data }) {
 
     const handleLoadedMetadata = (e) => {
       e.target.volume = 0.5;
-      setVolume(0.5);
       setDuration(video ? video.duration : e.target.duration);
     };
 
     const handleScroll = () => {
       if (video) {
         const rect = video.getBoundingClientRect();
-        const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        const isInView = rect.top > 0 && rect.bottom < window.innerHeight;
         setIsInViewport(isInView);
       }
     };
+
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     video.addEventListener('timeupdate', handleTimeUpdate);
@@ -139,7 +141,9 @@ function Video({ data }) {
                 src={data.file_url}
                 loop
                 onClick={() => setIsPlaying(!isPlaying)}
-                autoPlay={true}
+                autoPlay
+                muted={true}
+                playsInline
               ></video>
               <div className={cx('video-control')}>
                 <div className={cx('video-btn')}>
@@ -162,6 +166,8 @@ function Video({ data }) {
                     <span
                       onClick={() => {
                         setVolume(volume === 0 ? 1 : 0);
+                        videoRef.current.muted = false;
+                        if (!isPlaying) setIsPlaying(true);
                       }}
                     >
                       {volume === 0 ? <Icons.MuteVolumeVideoIcon /> : <Icons.VolumeVideoIcon />}

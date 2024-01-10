@@ -41,11 +41,9 @@ function SuggestedAccounts({ label }) {
   return (
     <div className={cx('wrapper')}>
       <p className={cx('label')}>{label}</p>
-
       {suggestedUserResult.map((suggestedUser) => (
         <AccountItem key={suggestedUser.id} data={suggestedUser} />
       ))}
-
       <button className={cx('more-btn')} onClick={handleSeeMore}>
         <p>See more</p>
       </button>

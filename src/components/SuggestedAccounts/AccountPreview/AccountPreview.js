@@ -5,15 +5,14 @@ import styles from './AccountPreview..module.scss';
 import Button from '~/components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-
-import images from '~/assets/images';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 function AccountPreview({ data }) {
   return (
     <div className={cx('wrapper')}>
       <header className={cx('header')}>
-        <img className={cx('avatar')} src={data.avatar || images.avatar} alt="avatar" />
+        <Image className={cx('avatar')} src={data.avatar} alt="avatar" />
         <Button className={cx('follow-btn')} primary>
           Follow
         </Button>

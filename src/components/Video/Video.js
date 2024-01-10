@@ -35,8 +35,11 @@ function Video({ data }) {
 
   useEffect(() => {
     const video = videoRef.current;
-    isPlaying ? video.play() : video.pause();
-  }, [isPlaying]);
+    if (isPlaying && isInViewport && video.paused) {
+      video.muted = true;
+      video.play();
+    } else video.pause();
+  }, [isPlaying, isInViewport]);
 
   const handleChangeTimeBar = function (e) {
     const timeBarValue = e.target.value;
@@ -56,7 +59,7 @@ function Video({ data }) {
     };
 
     const handleLoadedMetadata = (e) => {
-      e.target.volume = 0.5;
+      e.target.volume = 0;
       setDuration(video ? video.duration : e.target.duration);
     };
 
@@ -142,7 +145,7 @@ function Video({ data }) {
                 loop
                 onClick={() => setIsPlaying(!isPlaying)}
                 autoPlay
-                muted={true}
+                // muted={true}
                 playsInline
               ></video>
               <div className={cx('video-control')}>

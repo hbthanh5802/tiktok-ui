@@ -33,3 +33,12 @@ export const getVideoPagination = async (type = 'for-you', page = '1', except = 
     console.error(error);
   }
 };
+
+export const getUserVideos = async (id) => {
+  try {
+    const response = await request.get(`users/${id}/videos`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};

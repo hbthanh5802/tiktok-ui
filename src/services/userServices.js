@@ -18,3 +18,12 @@ export const suggestedUser = async (page = '1', except = '-1', per_page = '6') =
     console.error(error);
   }
 };
+
+export const getUser = async (nickname) => {
+  try {
+    const response = await request.get(`users/@${nickname}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};

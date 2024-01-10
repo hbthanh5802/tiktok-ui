@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
@@ -11,10 +11,12 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountPreview from './AccountPreview';
 import styles from './SuggestedAccount.module.scss';
 import Image from '~/components/Image';
+import * as userServices from '~/services/userServices';
 
 const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
+  const navigate = useNavigate();
   const renderPreview = (attrs) => {
     return (
       <div tabIndex="-1" {...attrs}>
@@ -26,6 +28,16 @@ function AccountItem({ data }) {
       </div>
     );
   };
+
+  const handleAccountItemClick = async (nickname) => {
+    try {
+      const result = await userServices.getUser(nickname);
+      navigate(`/profile/${nickname}`, { state: { user: result } });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <HeadlessTippy
       delay={[800, 0]}
@@ -35,16 +47,16 @@ function AccountItem({ data }) {
       placement="bottom"
       render={renderPreview}
     >
-      <Link to={`/profile/${data.nickname}`} className={cx('account-item')}>
+      <div className={cx('account-item')} onClick={() => handleAccountItemClick(data.nickname)}>
         <Image className={cx('avatar')} src={data.avatar} alt="avatar" />
         <div className={cx('info')}>
           <p className={cx('name')}>
-            <strong>{data.first_name + ' ' + data.last_name}</strong>
+            <strong>{data.nickname}</strong>
             {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCircleCheck} />}
           </p>
-          <p className={cx('nickname')}>{data.nickname}</p>
+          <p className={cx('nickname')}>{data.first_name + ' ' + data.last_name}</p>
         </div>
-      </Link>
+      </div>
     </HeadlessTippy>
   );
 }

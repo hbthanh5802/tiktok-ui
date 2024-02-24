@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/hbthanh5802/tiktok-ui/static/css/main.00d4c1e2.css",
+    "main.js": "/hbthanh5802/tiktok-ui/static/js/main.f3ef89d7.js",
+    "static/js/787.4c9d15e8.chunk.js": "/hbthanh5802/tiktok-ui/static/js/787.4c9d15e8.chunk.js",
+    "static/media/tempVideo.mp4": "/hbthanh5802/tiktok-ui/static/media/tempVideo.70b4d0d35e2144bbb56e.mp4",
+    "static/media/avatar.jpg": "/hbthanh5802/tiktok-ui/static/media/avatar.f19ec627e93e91356095.jpg",
+    "static/media/TikTokDisplayFont-Bold.woff2": "/hbthanh5802/tiktok-ui/static/media/TikTokDisplayFont-Bold.b191c0620e8c9617ea10.woff2",
+    "static/media/TikTokFont-Bold.woff2": "/hbthanh5802/tiktok-ui/static/media/TikTokFont-Bold.145f211a356fce76072d.woff2",
+    "static/media/TikTokFont-Semibold.woff2": "/hbthanh5802/tiktok-ui/static/media/TikTokFont-Semibold.0a3262809350126554ad.woff2",
+    "static/media/TikTokFont-Regular.woff2": "/hbthanh5802/tiktok-ui/static/media/TikTokFont-Regular.0ca75da985ad7821cbde.woff2",
+    "static/media/video1_thumbnail.jpg": "/hbthanh5802/tiktok-ui/static/media/video1_thumbnail.b3398eac8ba8434f2016.jpg",
+    "static/media/logo.svg": "/hbthanh5802/tiktok-ui/static/media/logo.c29f58ddc3e53a73f617b98a61b41877.svg",
+    "index.html": "/hbthanh5802/tiktok-ui/index.html",
+    "static/media/tiktok_effect_house.svg": "/hbthanh5802/tiktok-ui/static/media/tiktok_effect_house.928764a6bd7c3eafef1f2e58dff27ffa.svg",
+    "main.00d4c1e2.css.map": "/hbthanh5802/tiktok-ui/static/css/main.00d4c1e2.css.map",
+    "main.f3ef89d7.js.map": "/hbthanh5802/tiktok-ui/static/js/main.f3ef89d7.js.map",
+    "787.4c9d15e8.chunk.js.map": "/hbthanh5802/tiktok-ui/static/js/787.4c9d15e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00d4c1e2.css",
+    "static/js/main.f3ef89d7.js"
+  ]
+}

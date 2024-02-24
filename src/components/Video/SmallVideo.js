@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './SmallVideo.module.scss';
 import * as Icons from '~/components/Icons';
+import videos from '~/assets/videos';
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +28,10 @@ function SmallVideo({ data }) {
       <div className={cx('container')} onMouseEnter={() => setIsPlaying(true)} onMouseLeave={handleMouseLeave}>
         <div className={cx('video-wrapper')}>
           {!isPlaying && <img className={cx('thumbnail')} src={data.thumb_url} alt="thumbnail" />}
-          <video ref={videoRef} className={cx('video')} src={data.file_url} loop muted={true} autoPlay></video>
+          <video ref={videoRef} className={cx('video')} loop muted={true} autoPlay>
+            <source src={data.file_url} type="video/mp4" />
+            <source src={videos.tempVideo} type="video/mp4" />
+          </video>
           <div className={cx('control')}>
             <div className={cx('control-item')}>
               <span className={cx('control-icon')}>

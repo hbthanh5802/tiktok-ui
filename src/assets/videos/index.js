@@ -1,5 +1,5 @@
 const videos = {
-  video1: require('./temp-video.mp4'),
+  tempVideo: require('./tempVideo.mp4'),
 };
 
 export default videos;

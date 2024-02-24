@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
   const navigate = useNavigate();
+  // console.log(data);
 
   const handleAccountItemClick = async (nickname) => {
     try {

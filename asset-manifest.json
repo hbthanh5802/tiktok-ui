@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hbthanh5802/tiktok-ui/static/css/main.00d4c1e2.css",
-    "main.js": "/hbthanh5802/tiktok-ui/static/js/main.f3ef89d7.js",
+    "main.js": "/hbthanh5802/tiktok-ui/static/js/main.bed6611c.js",
     "static/js/787.4c9d15e8.chunk.js": "/hbthanh5802/tiktok-ui/static/js/787.4c9d15e8.chunk.js",
     "static/media/tempVideo.mp4": "/hbthanh5802/tiktok-ui/static/media/tempVideo.70b4d0d35e2144bbb56e.mp4",
     "static/media/avatar.jpg": "/hbthanh5802/tiktok-ui/static/media/avatar.f19ec627e93e91356095.jpg",
@@ -14,11 +14,11 @@
     "index.html": "/hbthanh5802/tiktok-ui/index.html",
     "static/media/tiktok_effect_house.svg": "/hbthanh5802/tiktok-ui/static/media/tiktok_effect_house.928764a6bd7c3eafef1f2e58dff27ffa.svg",
     "main.00d4c1e2.css.map": "/hbthanh5802/tiktok-ui/static/css/main.00d4c1e2.css.map",
-    "main.f3ef89d7.js.map": "/hbthanh5802/tiktok-ui/static/js/main.f3ef89d7.js.map",
+    "main.bed6611c.js.map": "/hbthanh5802/tiktok-ui/static/js/main.bed6611c.js.map",
     "787.4c9d15e8.chunk.js.map": "/hbthanh5802/tiktok-ui/static/js/787.4c9d15e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00d4c1e2.css",
-    "static/js/main.f3ef89d7.js"
+    "static/js/main.bed6611c.js"
   ]
 }
